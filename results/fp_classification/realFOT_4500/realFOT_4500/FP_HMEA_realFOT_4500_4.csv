@@ -1,0 +1,2 @@
+FOT,logicalScenario,dataIndex,startFrameIndex,endFrameIndex,collisionModeGT,impactSample,roadGeometry
+FOT_B,,10,801,1200,0,0,INT;URB

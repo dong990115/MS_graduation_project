@@ -1,0 +1,30 @@
+# 회전교차로 충돌 예측 — Python 의존성
+# 설치:  pip install -r requirements.txt
+#
+# Python 3.9+ (3.11에서 실행 검증)
+# 아래 버전은 2026-07 정합성 감사 환경에서 검증된 조합이다.
+# MATLAB R2022b+ 는 src/param_space/sampling/*.m 에만 필요하다.
+
+# --- 공통 수치·데이터
+numpy==2.4.4
+scipy==1.18.0
+pandas==3.0.2
+matplotlib==3.11.0
+
+# --- src/road_generation (절차적 도로망 생성)
+PyYAML==6.0.2           # config.yaml 로드
+dill==0.3.9
+seaborn==0.13.2         # ERA 플롯 (run_modeE_eval)
+typing_extensions==4.12.2
+
+# --- src/param_space, src/data_selection (GMM 진단, PCA·k-means)
+scikit-learn==1.9.0
+
+# --- MATLAB v7.3 mat 읽기
+h5py==3.12.1
+
+# --- src/data_selection (CP-CNN 임베딩 추출·선별)
+torch==2.13.0           # GPU 가속용 — CPU 전용 환경이면 CPU 빌드로 충분
+onnx==1.22.0
+onnxruntime==1.27.0
+Pillow==11.0.0          # DSM PNG 로드
